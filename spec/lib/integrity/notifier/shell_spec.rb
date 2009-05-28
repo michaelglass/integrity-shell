@@ -9,25 +9,25 @@ describe Integrity::Notifier::Shell do
       end
       context "if the passing script exist" do
         before(:each) do
-          @config = {'passing_script' => File.expand_path(File.dirname(__FILE__)) + '/test_pass', 'failing_script' => ''}          
+          @config = {'pass_script' => File.expand_path(File.dirname(__FILE__)) + '/test_pass', 'fail_script' => ''}          
           @shell = Integrity::Notifier::Shell.new(@passing, @config)
         end
         it "should run the passing script" do
-          @shell.deliver!.should == "pass!"
+          @shell.deliver!.should == "pass!\n"
         end
       end
     
       context "if the passing script doesn't exist" do
         context "if the passing script is blank" do
           before(:each) do 
-            @config = {'passing_script' => '', 'failing_script' => ''}
+            @config = {'pass_script' => '', 'fail_script' => ''}
           end
           it "should not try to run the script"
         end
   
         context "if the passing script is not blank" do
           before(:each) do 
-            @config = {'passing_script' =>  File.expand_path(File.dirname(__FILE__)) +'/test_pass_fake', 'failing_script' => ''}
+            @config = {'pass_script' =>  File.expand_path(File.dirname(__FILE__)) +'/test_pass_fake', 'fail_script' => ''}
           end
           it "should log an error"
         end
@@ -40,7 +40,7 @@ describe Integrity::Notifier::Shell do
       end
       context "if the failing script exists" do
         before(:each) do
-          @config = {'failing_script' => File.expand_path(File.dirname(__FILE__)) + '/test_fail', 'passing_script' => ''}
+          @config = {'fail_script' => File.expand_path(File.dirname(__FILE__)) + '/test_fail', 'pass_script' => ''}
           @shell = Integrity::Notifier::Shell.new(@failing, @config)
         end
         it "should run the failing script"
@@ -49,14 +49,14 @@ describe Integrity::Notifier::Shell do
       context "if the failing script does not exist" do
         context "if the failing script is blank" do
           before(:each) do 
-            @config = {'passing_script' => '', 'failing_script' => ''}
+            @config = {'pass_script' => '', 'fail_script' => ''}
           end
           it "should not try to run the script"
         end
     
         context "if the failing script is not blank" do
           before(:each) do 
-            @config = {'failing_script' => File.expand_path(File.dirname(__FILE__) + '/test_fail_fake'), 'passing_script' => ''}
+            @config = {'fail_script' => File.expand_path(File.dirname(__FILE__) + '/test_fail_fake'), 'pass_script' => ''}
           end
      
           it "should log an error"

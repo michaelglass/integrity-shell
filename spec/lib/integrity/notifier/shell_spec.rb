@@ -1,6 +1,6 @@
 require File.expand_path(File.dirname(__FILE__) + '/../../../spec_helper')
 
-describe Shell do
+describe Integrity::Notifier::Shell do
   describe "#deliver!" do
   
     context "a passing commit is pushed" do
@@ -9,7 +9,7 @@ describe Shell do
       end
       context "if the passing script exist" do
         before(:each) do
-          @config = {'passing_script' => File.expand_path(File.dirname(__FILE__) + '/test_pass'), 'failing_script' => ''}          
+          @config = {'passing_script' => File.expand_path(File.dirname(__FILE__)) + '/test_pass', 'failing_script' => ''}          
           @shell = Integrity::Notifier::Shell.new(@passing, @config)
         end
         it "should run the passing script" do
@@ -40,7 +40,7 @@ describe Shell do
       end
       context "if the failing script exists" do
         before(:each) do
-          @config = {'failing_script' => File.expand_path(File.dirname(__FILE__) + '/test_fail'), 'passing_script' => ''}
+          @config = {'failing_script' => File.expand_path(File.dirname(__FILE__)) + '/test_fail', 'passing_script' => ''}
           @shell = Integrity::Notifier::Shell.new(@failing, @config)
         end
         it "should run the failing script"

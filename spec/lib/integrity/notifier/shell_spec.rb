@@ -43,7 +43,9 @@ describe Integrity::Notifier::Shell do
           @config = {'fail_script' => File.expand_path(File.dirname(__FILE__)) + '/test_fail', 'pass_script' => ''}
           @shell = Integrity::Notifier::Shell.new(@failing, @config)
         end
-        it "should run the failing script"
+        it "should run the failing script" do
+          @shell.deliver!.should == "fail!\n"
+        end
       end
         
       context "if the failing script does not exist" do

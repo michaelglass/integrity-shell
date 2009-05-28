@@ -3,4 +3,4 @@
 
 #right now, all we do is print something to stdout.  
 #Later we might confirm that we receive params from the notifier
-echo 'pass!'
+echo 'fail!'

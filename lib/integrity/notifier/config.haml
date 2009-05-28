@@ -1,35 +1,8 @@
 %p.normal
-  %label{ :for => "pass_path" } Send to
-  %input.text#email_notifier_to{ :name => "notifiers[Email][to]", :type => "text", :value => config["to"] }
+  %label{ :for => "shell_notifier_pass_script" } Passing Script
+  %input.text#shell_notifier_pass_script{ :name => "notifiers[Shell][pass_script]", :type => "text", :value => config["pass_script"] }
 
 %p.normal
-  %label{ :for => "email_notifier_from" } Send from
-  %input.text#email_notifier_from{ :name => "notifiers[Email][from]", :type => "text", :value => config["from"] }
-
-%h3 SMTP Server Configuration
-
-%p.normal
-  %label{ :for => "email_notifier_host" } Host : Port
-  = succeed " : " do
-    %input.text#email_notifier_host{ :name => "notifiers[Email][host]", :value => config["host"], :style => "width: 24.5em;", :type => "text" }
-  %input.text#email_notifier_port{ :name => "notifiers[Email][port]", :value => config["port"], :style => "width: 3.5em;", :type => "text" }
-
-%p.normal
-  %label{ :for => "email_notifier_user" } User
-  %input.text#email_notifier_user{ :name => "notifiers[Email][user]", :value => config["user"], :type => "text" }
-
-%p.normal
-  %label{ :for => "email_notifier_pass" } Password
-  %input.text#email_notifier_pass{ :name => "notifiers[Email][pass]", :value => config["pass"], :type => "text" }
-
-%p.normal
-  %label{ :for => "email_notifier_auth" } Auth type
-  %select#email_notifier_auth{ :name => "notifiers[Email][auth]", :value => (config["auth"] || "plain"), :type => "text" }
-    %option{ :value => '', :selected => true } none
-    %option{ :value => 'login'} login
-    %option{ :value => 'cram_md5' } cram_md5
-    %option{ :value => 'plain' } plain
-
-%p.normal
-  %label{ :for => "email_notifier_domain" } Domain
-  %input.text#email_notifier_domain{ :name => "notifiers[Email][domain]", :value => config["domain"], :type => "text" }
+  %label{ :for => "shell_notifier_fail_script" } Failing Script
+  %input.text#shell_notifier_fail_script{ :name => "notifiers[Shell][fail_script]", :type => "text", :value => config["fail_script"] }
+  

@@ -36,7 +36,7 @@ describe Integrity::Notifier::Shell do
     
     context "a failing commit is pushed" do
       before(:each) do
-        @failing = Integrity::commit.gen(:failed)
+        @failing = Integrity::Commit.gen(:failed)
       end
       context "if the failing script exists" do
         before(:each) do

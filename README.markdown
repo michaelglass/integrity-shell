@@ -27,7 +27,7 @@ License
 
 (The MIT License)
 
-Copyright (c) 2008, 2009 [Nicolás Sanguinetti][foca], [entp][]
+Copyright (c) 2008, 2009 Michael Glass, Jonah Bloch-Johnson, Michael Geraci
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the

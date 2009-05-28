@@ -3,19 +3,20 @@ Integrity
 
 [Integrity][] is your friendly automated Continuous Integration server.
 
-Integrity Email Notifier
+Integrity Shell Notifier
 ========================
 
-This lets Integrity send emails after each build is made.
+This lets Integrity run shell scripts after each build is made.
 
 Setup Instructions
 ==================
 
-Just install this gem via `sudo gem install integrity-email` and then in your
+Add github to your git sources `sudo gem sources -a http://gems.github.com`
+Install this gem via `sudo gem install michaelglass-integrity-shell` and then in your
 Rackup (ie, `config.ru`) file:
 
     require "rubygems"
-    require "integrity/notifier/email"
+    require "integrity/notifier/shell"
 
 And badabing! Now you can set up your projects to send emails after
 each build (just edit the project and the config options should be
@@ -48,5 +49,3 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 [Integrity]: http://integrityapp.com
-[foca]:      http://nicolassanguinetti.info
-[entp]:      http://entp.com

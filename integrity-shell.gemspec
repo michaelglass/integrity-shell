@@ -13,12 +13,17 @@ Gem::Specification.new do |s|
 
 #  s.rubyforge_project = "integrity"
 
-#   s.files             = %w[
-# README.markdown
-# Rakefile
-# integrity-email.gemspec
-# lib/integrity/notifier/config.haml
-# lib/integrity/notifier/email.rb
-# test/integrity_email_test.rb
-# ]
+   s.files             = %w[
+ README.markdown
+ Rakefile
+ integrity-shell.gemspec
+ lib/integrity/notifier/config.haml
+ lib/integrity/notifier/shell.rb
+ spec/rcov.opts
+ spec/spec.opts
+ spec/spec_helper.rb
+ spec/lib/integrity/notifier/shell_spec.rb
+ spec/lib/integrity/notifier/test_fail
+ spec/lib/integrity/notifier/test_pass
+ ]
 end

@@ -1,6 +1,0 @@
-#!/bin/sh
-# this is a script that is used when testing the integrity-shell notifier
-
-#right now, all we do is print something to stdout.  
-#Later we might confirm that we receive params from the notifier
-echo 'fail!'

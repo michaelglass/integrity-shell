@@ -1,3 +1,2 @@
-require File.dirname(__FILE__) + "/lib/integrity/notifier/shell.rb"
+require File.dirname(__FILE__) + "/../lib/integrity/notifier/shell"
 require 'spec/autorun'
-require 'spec/rails'

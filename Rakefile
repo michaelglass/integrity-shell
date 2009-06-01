@@ -1,5 +1,5 @@
 task :default => :test
 
 task :test do
-  `spec spec`
+  system 'spec spec'
 end

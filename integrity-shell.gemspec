@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name              = "integrity-shell"
-  s.version           = "0.1"
+  s.version           = "0.1.0"
   s.date              = "2009-05-28"
   s.summary           = "Shell Script notifier for the Integrity continuous integration server"
   s.description       = "Easily let Integrity run a shell script after builds"

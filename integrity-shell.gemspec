@@ -4,12 +4,13 @@ Gem::Specification.new do |s|
   s.date              = "2009-05-28"
   s.summary           = "Shell Script notifier for the Integrity continuous integration server"
   s.description       = "Easily let Integrity run a shell script after builds"
-#  s.homepage          = "http://integrityapp.com"
+  s.homepage          = "http://integrityapp.com"
   s.email             = "info@thealmanac.org"
   s.authors           = ["Michael Glass", "Michael Geraci", "Jonah Bloch-Johnson"]
   s.has_rdoc          = false
 
   s.add_dependency "integrity"
+
 
 #  s.rubyforge_project = "integrity"
 
